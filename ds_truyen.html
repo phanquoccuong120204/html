@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <link rel="shortcut icon" type="images/png" href="/favicon.jdg"/> 
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body> 
+    <section class="myheader"> 
+        <div class="container py-3">
+            <div class="row"> 
+                <div class="col-md-3">
+                    <img src="images/vanlang.webp" class="img-fluid" alt="logo">
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Từ khoá tìm kiếm" 
+                            aria-label="Từ khoá tìm kiếm" aria-describedby="basic-addon2">
+                        <span class="input-group-text" id="basic-addon2"><i 
+                            class="fa-solid fa-magnifying-glass"></i></span> 
+                    </div> 
+                </div> 
+                <div class="col-md-3">
+                    <div class="row"> 
+                        <div class="col"> 
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="fs-3 text-danger"> 
+                                        <i class="fa-solid fa-phone"></i>
+                                    </div>
+                                </div> 
+                                <div class="col-9">
+                                    Tư vấn hỗ trợ<br> 
+                                    <strong class="text-danger">012345678</strong>
+                                </div>
+                            </div>  
+                        </div>   
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="fs-3 text-danger"> 
+                                        <i class="fa-regular fa-circle-user"></i>
+                                    </div>
+                                </div> 
+                                <div class="col-9">
+                                    Xin chào<br> 
+                                    <strong class="text-danger"><a href="index.html" title="Thoát">Thoát</a></strong>
+                                </div>
+                            </div>  
+                        </div>  
+                    </div> 
+                </div>
+                      
+                <div class="col-md-2 ">
+                    <div class="row">
+                        <div class="col"><a href="#" class="position-relative">
+                            <span class="fs-2"><i class="fa-brands fa-facebook-messenger"></i></span>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                              2
+                              <span class="visually-hidden">unread messages</span>
+                            </span>
+                        </a></div> 
+                        <div class="col">
+                            <a href="#" class="position-relative">
+                                <span class="fs-2"><i class="fa-solid fa-bag-shopping"></i></span>
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                  5
+                                </span>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="#" class="position-relative">
+                                <span class="fs-2"><i class="fa-solid fa-print"></i></span>
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                  1
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>     
+            </div>
+        </div> 
+    </section>
+    <!--myheader-->
+    <section class="mymainmenu bg-danger">
+        <div class="container"> 
+            <div class="row">
+                <div class="col-md-3 text-white py-3"></div>
+                <div class="col-md-9">
+                    <nav class="navbar navbar-expand-lg bg-danger">
+                        <div class="container-fluid">
+                          <a class="navbar-brand d-none" href="#">Navbar</a>
+                          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                              <li class="nav-item">
+                                <a class="nav-link text-white active" aria-current="page" href="trangchu.html">Trang chủ</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link text-white active" aria-current="page" href="gioi_thieu.html">Giới thiệu</a>
+                              </li>
+                              <li class="nav-item dropdown">
+                                <a class="nav-link text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Sản phẩm
+                                </a>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="ds_sach.html">Sách</a></li>
+                                  <li><a class="dropdown-item" href="ds_truyen.html">Truyện</a></li>
+                                  <li><a class="dropdown-item" href="ds_tieuthuyet.html">Tiểu Thuyết</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link text-white active" aria-current="page" href="uu_dai.html">Ưu đãi hot</a>
+                              </li> 
+                              <li class="nav-item">
+                                <a class="nav-link text-white active" aria-current="page" href="map.html">Địa chỉ</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </nav>    
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mymaincontent"></section>
+    <section class = "style_banhang-list">
+
+        <article class="style_banhang">
+            <div class="details">
+                <h1>CÁC LOẠI TRUYỆN</h1>
+            </div>
+        </article>
+
+        <article class="style_banhang">
+            <img src="images/conan100.png" alt="Hình ảnh sản phẩm">
+            <div class="details">
+                <h4>Truyện thám tử lừng danh Conan tập 100</h4>
+                <p class="price">15.000 VNĐ</p>
+                <button class="buy_bn">Mua hàng</button>
+                <button class="giohang_bn">Thêm vào giỏ hàng</button>
+            </div>
+        </article>
+
+        <article class="style_banhang">
+            <img src="images/conan100.png" alt="Hình ảnh sản phẩm">
+            <div class="details">
+                <h4>Truyện thám tử lừng danh Conan tập 100</h4>
+                <p class="price">15.000 VNĐ</p>
+                <button class="buy_bn">Mua hàng</button>
+                <button class="giohang_bn">Thêm vào giỏ hàng</button>
+            </div>
+        </article>
+
+        <article class="style_banhang">
+            <img src="images/conan100.png" alt="Hình ảnh sản phẩm">
+            <div class="details">
+                <h4>Truyện thám tử lừng danh Conan tập 100</h4>
+                <p class="price">15.000 VNĐ</p>
+                <button class="buy_bn">Mua hàng</button>
+                <button class="giohang_bn">Thêm vào giỏ hàng</button>
+            </div>
+        </article>
+
+        <article class="style_banhang">
+            <img src="images/conan100.png" alt="Hình ảnh sản phẩm">
+            <div class="details">
+                <h4>Truyện thám tử lừng danh Conan tập 100</h4>
+                <p class="price">15.000 VNĐ</p>
+                <button class="buy_bn">Mua hàng</button>
+                <button class="giohang_bn">Thêm vào giỏ hàng</button>
+            </div>
+        </article>
+
+        <article class="style_banhang">
+            <img src="images/conan100.png" alt="Hình ảnh sản phẩm">
+            <div class="details">
+                <h4>Truyện thám tử lừng danh Conan tập 100</h4>
+                <p class="price">15.000 VNĐ</p>
+                <button class="buy_bn">Mua hàng</button>
+                <button class="giohang_bn">Thêm vào giỏ hàng</button>
+            </div>
+        </article>
+
+        <article class="style_banhang">
+            <img src="images/conan100.png" alt="Hình ảnh sản phẩm">
+            <div class="details">
+                <h4>Truyện thám tử lừng danh Conan tập 100</h4>
+                <p class="price">15.000 VNĐ</p>
+                <button class="buy_bn">Mua hàng</button>
+                <button class="giohang_bn">Thêm vào giỏ hàng</button>
+            </div>
+        </article>
+
+        <article class="style_banhang">
+            <img src="images/conan100.png" alt="Hình ảnh sản phẩm">
+            <div class="details">
+                <h4>Truyện thám tử lừng danh Conan tập 100</h4>
+                <p class="price">15.000 VNĐ</p>
+                <button class="buy_bn">Mua hàng</button>
+                <button class="giohang_bn">Thêm vào giỏ hàng</button>
+            </div>
+        </article>
+
+        <article class="style_banhang">
+            <img src="images/conan100.png" alt="Hình ảnh sản phẩm">
+            <div class="details">
+                <h4>Truyện thám tử lừng danh Conan tập 100</h4>
+                <p class="price">15.000 VNĐ</p>
+                <button class="buy_bn">Mua hàng</button>
+                <button class="giohang_bn">Thêm vào giỏ hàng</button>
+            </div>
+        </article>
+
+        <article class="style_banhang">
+            <img src="images/conan100.png" alt="Hình ảnh sản phẩm">
+            <div class="details">
+                <h4>Truyện thám tử lừng danh Conan tập 100</h4>
+                <p class="price">15.000 VNĐ</p>
+                <button class="buy_bn">Mua hàng</button>
+                <button class="giohang_bn">Thêm vào giỏ hàng</button>
+            </div>
+        </article>
+
+    </section>
+    <section class="mymaincontent"></section>
+    <section class="myfooter bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3"> 
+                    <h4 class="fs-5">VĂN PHÒNG GIAO DỊCH</h4>
+                    <ul class="list-menu">
+						
+						<li class="li_menu"><a href="trangchu.html" title="Trang chủ">Trang chủ</a></li>
+						<li class="li_menu"><a href="https://www.fahasa.com/gioi-thieu-fahasa" title="Giới thiệu">Giới thiệu về nhà sách (web mượn)</a></li>						
+						<li class="li_menu"><a href="https://www.fahasa.com/he-thong-trung-tam-nha-sach" title="Hệ thống">Hệ thống nhà sách (web mượn)</a></li>						
+						<li class="li_menu"><a href="dieu_khoan_sd.html" title="Điều khoản">Điều khoản sử dụng</a></li>						
+						<li class="li_menu"><a href="https://www.fahasa.com/chinh-sach-bao-mat" title="Bảo mật">Chính sách bảo mật (web mượn)</a></li>						
+						<li class="li_menu"><a href="cs_ban_hang.html" title="Bán hàng">Chính sách bán hàng</a></li>						
+						<li class="li_menu"><a href="van_chuyen.html" title="Vận chuyển">Phương thức vận chuyển</a></li>
+						
+					</ul>
+                </div>
+                <div class="col-md-3"> 
+                    <h4 class="fs-5">TÀI KHOẢN CỦA TÔI</h4>
+                    <ul class="list-menu">
+						<li class="li_menu"><a href="dang_nhap.html" title="Đăng nhập">Đăng nhập</a></li>						
+						<li class="li_menu"><a href="tao_tk.html" title="Tài khoản">Tạo tài khoản</a></li>						
+						<li class="li_menu"><a href="/Danh_sach_yeu_thich" title="Yêu thích">Danh sách yêu thích</a></li>						
+					
+					</ul>
+                </div>
+                <div class="col-md-3"> 
+                    <h4 class="fs-5">HỖ TRỢ KHÁCH HÀNG</h4>
+                    <ul class="list-menu">
+						<li class="li_menu"><a href="cac_cau_hoi.html" title="Giới thiệu">Các câu hỏi thường gặp</a></li>						
+						<li class="li_menu"><a href="doi_tra_hang.html" title="Đổi Trả">Chính sách đổi/Trả hàng</a></li>						
+						<li class="li_menu"><a href="quydinh_binhluan.html" title="">Quy định viết bình luận</a></li>											
+					</ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                   <h5>NHÀ SÁCH VĂN LANG</h5><br>
+&copy; 2021 Nhà sách văn lang
+<br>Chứng nhận ĐKKD số: 012345678 do sở KH & ĐT TP.Hồ Chí Minh cấp
+<br>Địa chỉ: 69/68 Đặng Thùy Trâm, P. 13, Q. Bình Thạnh, Tp. HCM
+<br>Điện thoại: 19001234 - Email: vanlang@gmail.vn
+                </div> 
+                <div class="col-md-6"> 
+                    <h5>LIÊN HỆ VỚI CHÚNG TÔI</h5>
+                    <span class="box50 border border danger mr-3"> 
+                        <i class="fa-brands fa-facebook"></i>
+                    </span> 
+                    <span class="box50 border border danger mr-3 text-primary"> 
+                        <i class="fa-brands fa-youtube"></i>
+                    </span> 
+                    <span class="box50 border border danger mr-3"> 
+                        <i class="fa-brands fa-google"></i>
+                    </span>
+                    <span class="box50 border border danger text-danger"> 
+                        <i class="fa-brands fa-instagram"></i>
+                    </span>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    © 2023 - Bản quyền của nhà sách văn lang - nhasachvanlang.com
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+                

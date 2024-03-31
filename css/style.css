@@ -1,0 +1,87 @@
+.style {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.li_menu :hover {
+    background: red;
+}
+
+.style_banhang-list {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.style_banhang {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #968a8a;
+    border-radius: 5px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.style_banhang img{
+    max-width: 100px;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: #968a8a;
+}
+
+.details h1 {
+    background-color: #7434db;
+    margin-left: 220px;
+    text-align: center;
+    color: #fff;
+    border: none;
+    padding: 5px 5px;
+    font-size: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.details h4 {
+    font-size: 24px;
+}
+
+.price {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+}
+
+.details p {
+    margin: 10px 0 ;
+    font-size: 20px;
+}
+
+.buy_bn {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.giohang_bn {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+} 

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Bookstore - Special Offers</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .book {
+            border: 1px solid #ddd;
+            background-color: #fff;
+            padding: 15px;
+            margin: 10px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .book img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .book h2 {
+            color: #333;
+        }
+
+        .book p {
+            color: #777;
+        }
+
+        .special-offer {
+            background-color: #ffc107;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .add-to-cart {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .cart {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        body {
+        padding-top: 56px;
+    }
+
+    body {
+            padding-top: 56px;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding-top: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="trangchu.html">Trang chủ</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="uu_dai.html">Ưu Đãi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Tài Khoản</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Thông Báo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Liên Hệ</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <header>
+        <div class="container">
+            <h1 class="display-4">Cửa Hàng Sách Văn Lang</h1>
+            <p class="lead">Ưu Đãi Hấp Dẫn Nhân Dịp Khai Trương.</p>
+        </div>
+    </header>
+
+    <section id="bookList">
+    </section>
+
+    <div class="cart" onclick="openCart()">Giỏ Hàng: 0.00đ</div>
+    <footer>
+        <p>&copy; 2023 Cửa Hàng Sách Văn Lang.</p>
+    </footer>
+
+    <script>
+        let cartTotal = 0;
+        let cartItems = [];
+
+        const books = [
+            { title: 'Sách Giải thích ngữ pháp tiếng Anh - Mai Lan Hương', description: 'Sách được biên soạn thành các chương, đề cập những vấn đề từ cơ bản đến nâng cao. Nội dung các chương được biên soạn dựa trên ngữ pháp tiếng Anh hiện đại, giải thích cặn kẽ, rõ ràng các cách dùng và qui luật mà người học cần nắm vững; đồng thời chỉ ra những quy luật khác nhau của Tiếng Anh của người Anh (British English) và Tiếng Anh của người Mỹ ( American English). Cuối mỗi phần ngữ pháp đều có bài tập đa dạng để người đọc nắm vững lý thuyết.', price: 140.000, image: 'https://tse4.mm.bing.net/th?id=OIP.ZGnehjI-0Ywgvs_ZcMPCHwHaHa&pid=Api&P=0&h=220.jpg' },
+            { title: 'Sách - Người Không Mang Họ', description: 'Người không mang họ là một tiểu thuyết của nhà văn Việt Nam Xuân Đức ra đời năm 1983 với nhân vật chính là tướng cướp Trương Sỏi (còn có các tên khác là Hoàng Lạng, Nguyễn Viết Lãm). Khi mới xuất bản lần đầu năm 1983, tiểu thuyết đã gây một cơn sốt với con số xuất bản kỷ lục là 3 vạn bản rồi mười vạn bản. Tiểu thuyết này cũng được chuyển thể thành bộ phim cùng tên do đạo diễn Long Vân chỉ đạo với nam diễn viên Lý Hùng thủ vai tướng cướp Trương Sỏi. Năm 2007, nhà văn Xuân Đức đã được trao Giải thưởng Nhà nước về văn học nghệ thuật cho tác phẩm này.', price: 89.000, image: 'https://tse1.mm.bing.net/th?id=OIP.qx6dew-gWQ4H-ydjFgNn_AHaHa&pid=Api&P=0&h=220.jpg' },
+            { title: 'Truyện Banana Fish - Tập 11', description: 'Câu chuyện xảy ra ở New York những năm 80, kể về một chàng trai trẻ tên Ash Lynx. Ash là thủ lĩnh của một băng đảng đường phố. Cậu được một ông trùm mafia là “Papa” Dino Golzine nuôi dưỡng thành tay sai và đồ chơi tình dục của lão. Do căm ghét Dino và khát khao tự do, Ash đã chạy trốn và sống lang thang cùng đám đàn em của mình. Chẳng ngờ trong một lần tình cờ cậu lại nắm được một bí mật lớn có thể làm rung chuyển thế giới ngầm của “Papa”.', price: 45.000, image: 'https://cdn0.fahasa.com/media/catalog/product/n/x/nxbtre_full_07462023_034649_1.jpg' },
+            { title: 'Truyện Moriarty The Patriot - Tập 3', description: 'Vào thế kỷ 19, đế chế Anh quốc áp đặt sự thống trị của mình bao trùm khắp thế giới. Tầng lớp quý tộc tự cho mình những đặc ân chưa từng thấy, khiến hố ngăn giai cấp ngày càng bị đào sâu.Sinh ra trong một gia đình quý tộc như thế, nhưng Albert James Moriarty cảm thấy chán ghét chính dòng máu đang chảy trong người mình, và trong một lần thăm cô nhi viện, cậu đã tìm thấy hai đứa trẻ cùng chung lý tưởng. Cậu quyết định nhận nuôi cả hai, bước đầu tiên đưa William James Moriarty bước lên vũ đài, với khát khao thay đổi thế giới, mang lại một cuộc sống tươi đẹp hơn cho nhân loại.', price: 45.000, image: 'https://cdn0.fahasa.com/media/catalog/product/n/x/nxbtre_full_26532023_035354.jpg' },
+            { title: 'Sách Khéo Ăn Nói Sẽ Có Được Thiên Hạ', description: 'Trong xã hội thông tin hiện đại, sự im lặng không còn là vàng nữa, nếu không biết cách giao tiếp thì dù là vàng cũng sẽ bị chôn vùi. Trong cuộc đời một con người, từ xin việc đến thăng tiến, từ tình yêu đến hôn nhân, từ tiếp thị cho đến đàm phán, từ xã giao đến làm việc… không thể không cần đến kĩ năng và khả năng giao tiếp. Khéo ăn khéo nói thì đi đâu, làm gì cũng gặp thuận lợi. Không khéo ăn nói, bốn bề đều là trở ngại khó khăn. Đã bao giờ đánh mất một công việc, bạn bỏ lỡ một mối quan hệ tuyệt vời, hay đơn giản là bạn cảm thấy khó nói chuyện với mọi người. Bạn có bao giờ nghĩ là do kĩ năng nói chuyện của mình chưa tốt, chưa thuyết phục được mọi người. Bạn đổ lỗi cho số phận và vận may của mình chưa đến. Hãy dừng việc than thân trách phận và hành động để thay đòi chính mình.', price: 130.000, image: 'https://cdn0.fahasa.com/media/catalog/product/8/9/8936067605693.jpg' },
+        ];
+        const books2 = [
+        { title: 'Sách Lý Thuyết Trò Chơi', description: 'Cuốn sách Lý thuyết trò chơi là bách khoa toàn thư về tâm lý học, về tẩy não và chống lại tẩy não, thao túng và chống lại thao túng, thống trị và chống lại thống trị. Cuốn sách giới thiệu công thức chiến thắng cho những “trò chơi” đấu trí giữa người với người trong cuộc sống hằng ngày; phân tách các khái niệm lý thuyết trò chơi vốn mơ hồ trở thành ngôn ngữ dễ hiểu và kết nối liền mạch với nghệ thuật tâm lý học; cho phép bạn nắm vững những bí ẩn của trò chơi tâm lý trong thời gian ngắn nhất.', price: 179.000, discountprice: 125.300, image: 'https://cdn0.fahasa.com/media/catalog/product/8/9/8936066697088.jpg' },
+            { title: 'Sách Đám Trẻ Ở Đại Dương Đen', description: 'Đám trẻ ở đại dương đen là lời độc thoại và đối thoại của những đứa trẻ ở đại dương đen, nơi từng lớp sóng của nỗi buồn và tuyệt vọng không ngừng cuộn trào, lúc âm ỉ, khi dữ dội. Những đứa trẻ ấy phải vật lộn trong những góc tối tâm lý, với sự u uất đè nén từ tổn thương khi không được sinh ra trong một gia đình toàn vẹn, ấm êm, khi phải mang trên đôi vai non dại những gánh nặng không tưởng.Song song đó cũng là quá trình tự chữa lành vô cùng khó khăn của đám trẻ, cố gắng vươn mình ra khỏi đại dương đen, tìm cho mình một ánh sáng. Và chính những sự nỗ lực xoa dịu chính mình đó đã hóa thành những câu từ trong cuốn sách này, bất kể đau đớn thế nào. Cuốn sách được viết bởi Châu Sa Đáy Mắt, một tác giả GenZ mong muốn cùng các bạn trẻ bộc bạch và vỗ về những xúc cảm chân thật về gia đình, xã hội và chính bản thân.Sách được phát hành bởi Wavebooks - thương hiệu sách dành cho người Việt trẻ.', price: 99.000, discountprice: 69.300, image: 'https://cdn0.fahasa.com/media/catalog/product/8/9/8935325011559.jpg' },
+            { title: 'Sấch Muôn Kiếp Nhân Sinh - Many Times, Many Lives', description: 'Muôn kiếp nhân sinh”cung cấp cho bạn đọc kiến thức mới mẻ, vô tận của nhân loại lần đầu được hé mở, cùng những phân tích uyên bác, tiên đoán bất ngờ về hiện tại và tương lai thế giới của những bậc hiền triết thông thái. Đời người tưởng chừng rất dài nhưng lại trôi qua rất nhanh, sinh vượng suy tử, mong manh như sóng nước. Luật nhân quả cực kỳ chính xác, chi tiết, phức tạp được thu thập qua nhiều đời, nhiều kiếp, liên hệ tương hỗ đan xen chặt chữ lẫn nhau, không ai có thể tính được tích đức này có thể trừ được nghiệp kia không, không ai có thể biết được khi nào nhân sẽ trổ quả. Nhưng, một khi đã gây ra nhân thì chắc chắn sẽ gặt quả - luật Nhân quả của vũ trụ trước giờ không bao giờ sai', price: 168.800, discountprice: 117.600, image: 'https://cdn0.fahasa.com/media/catalog/product/m/u/muonkiepnhansinh.jpg' },
+            { title: 'Sách Dám Nghĩ Lại', description: 'Mười hai trong số mười lăm thành viên đội cứu hỏa đã tử nạn trong đám cháy gần đỉnh Mann Gulch vào năm 1949. Hai trong số ba người sống sót là nhờ có thể lực tốt nên kịp chạy thoát khỏi đám cháy; người còn lại, Wagner Dodge, đã thoát khỏi lưỡi hái tử thần bằng tư duy linh hoạt của mình. Những đồng đội của Wagner Dodge mất mạng vì đã hành động theo những kỹ năng và hiểu biết đã ăn sâu trong tiềm thức của họ. Dodge thì khác, anh không tìm cách dập lửa theo kiến thức tích lũy được, mà nhanh chóng nhận định tình hình và tạo ra một lối thoát hiểm bằng cách đốt trụi đám cỏ trước mặt, chặn đứng nguồn bắt lửa của đám cháy phía sau. Tưởng rằng đó là hành động điên rồ, nhưng Dodge đã thoát chết nhờ kịp thời tái tư duy.', price: 168.000, discountprice: 117.600, image: 'https://cdn0.fahasa.com/media/catalog/product/d/a/damnghilai_bia01.jpg' },
+        ];
+        const books3 = [
+            { title: '1011 First Words - Belongings (101 Từ Đầu Tiên - Đồ Dùng Thân Thiết)', description: 'Theo các nhà nghiên cứu khoa học, tuổi càng nhỏ, khả năng tiếp thu kiến thức thông qua hình ảnh của các em càng tốt, có thể bắt đầu ngay từ lứa tuổi mầm non, từ 2 - 7 tuổi. 101 First Words - Belongings (101 Từ Đầu Tiên - Đồ Dùng Thân Thiết) là những cuốn sách Anh – Việt vô cùng bổ ích dành cho các bé từ 2 đến 7 tuổi bắt đầu tập nói tiếng Anh. Bé sẽ được phát triển vốn từ tiếng Anh thông qua các chủ đề gần gũi như Giao thông, Bảng chữ cái, Các vật dụng trong nhà hay các chủ đề mang tính khám phá như Động vật… Không những thế, việc chọn lựa phương pháp chuyển tải thú vị của cuốn sách đã mở ra cho các em một thế giới hình ảnh sinh động và đầy màu sắc, giúp bé tiếp thu kiến thức và ghi nhớ dễ dàng hơn', price: 25.000, discountprice: 21.250, image: 'https://cdn0.fahasa.com/media/catalog/product/1/0/101_first_words___belongings___101_tu_dau_tien___do_dung_than_thiet_1_2020_05_15_14_53_15.jpg' },
+            { title: 'Sách Chinh Phục Everest', description: 'Có một ngọn núi đặc biệt đã vươn lên ở nơi xa kia. Đỉnh của nó là điểm cao nhất trên Trái Đất, thử thách tột cùng cho những nhà thám hiểm kiêm leo núi, một dáng hình cao vút choáng ngợp của Sagamatha – Nữ Thần Bầu Trời… Chào mừng bạn đến với núi Everest.Trong quyển sách ấn tượng này, bạn sẽ du hành về nguồn gốc cổ đại của ngọn núi, tìm hiểu hệ động thực vật trên triền núi vĩ đại, khám phá lịch sử và văn hóa phong phú bao quanh ngọn núi này.', price: 72.800, discountprice: 61.200, image: 'https://www.sachkhaitri.com/Data/Sites/2/Product/56542/chinh-phuc-everest.jpg' },
+            { title: 'Sách Suy Nghĩ Ngược - Cuốn Sách Cải Thiện Suy Nghĩ Giúp Bạn Sống Chủ Động, Tích Cực Và Thành Công', description: 'Suy Nghĩ Ngược là quyển sách sẽ giúp bạn cải thiện suy nghĩ để bạn sống chủ động, tích cực và thành công hơn. Dành cho những người nuôi hy vọng làm mới bản thân mình đến những người từng một lần trong đời có suy nghĩ muốn từ bỏ cuộc sống và rất nhiều bạn trẻ khác, quyển sách sẽ mang đến cho người đọc những góc nhìn, quan điểm và giá trị khác về cuộc sống.', price: 100.000, discountprice: 85.000, image: 'https://cdn0.fahasa.com/media/catalog/product/8/9/8935210301758.jpg' },
+            { title: 'Sách 999 Lá Thư Gửi Cho Chính Mình - Những Lá Thư Ấn Tượng Nhất', description: 'Theo dòng chảy hối hả của cuộc sống hiện nay – khi mỗi một ngày đều trôi qua nhanh chóng nhưng chẳng đọng lại được điều gì thì việc viết lách hay nhắn nhủ những lời tâm tình cho nhau càng trở thành một điều xa xỉ, dường như chẳng mấy ai nguyện làm. Nhưng không sao hết, đã có “999 lá thư gửi cho chính mình” – với Phiên bản chọn lọc, tổng hợp lại những lá thư hay nhất, những lá thư ý nghĩa nhất, chất chứa nội hàm, khả năng chữa lành cao sẽ thay những lá thư tay nói lên những điều bạn muốn giãi bày mà không thể cất tiếng, những điều trong lòng bạn chẳng biết thổ lộ với ai, cùng banj tìm lại ý nghĩa cuộc sống, tìm lại bản thân, tìm lại cả ước mơ và nhiệt huyết mà bạn đã lỡ đánh rơi trên con đường trưởng thành vội vã.Và cũng không chỉ dừng lại ở việc mang nội dung ý nghĩa, sâu sắc nhất, những lá thư được chọn lọc kỹ càng trong sách còn được trình bày dưới phương thức song ngữ Trung – Việt như một cách biểu đạt trọn vẹn tâm tư và tình cảm của tác giả đến với độc giả, để cuốn sách không chỉ là một phương thuốc chữa lành hữu hiệu cho tâm hồn mà còn là một ấn phẩm tuyệt vời cho việc trau dồi ngoại ngữ, bổ sung kiến thức, để bạn không chỉ có một vẻ ngoài rạng rỡ mà còn tỏa sáng cả trong nội tâm, làm một người không chỉ mạnh mẽ còn có tài hoa, giúp bạn nở rộ, làm chủ sinh mệnh của chính mình.', price: 50.000, discountprice: 42.500, image: 'https://cdn0.fahasa.com/media/catalog/product/8/9/8935325010736.jpg' },
+            { title: 'Sách Tăng Cường Tin Học Quốc Tế - Dành Cho Lớp 3 - IC3 GS6 Spark Level 1', description: 'Nhằm hỗ trợ quý thầy cô và học sinh trong việc dạy và học, với mục tiêu vừa học chương trình Tin học Quốc gia, nhưng đồng thời có thể học và lấy được chứng chỉ của chương trình Tin học Quốc tế IC3 GS6 Spark - Level 1, nhóm biên soạn giáo trình Tin học Quốc tế của tổ chức giáo dục IIG Vietnam biên soạn giáo trình này.So với các bộ giáo trình trước đây, bộ giáo trình “Tin học Quốc tế IC3 GS6 Spark - Level 1” Có những đặc điểm như sau:Nội dung sát với các mục tiêu bài thi IC3 GS6 Spark - Level 1;Bổ sung các nội dung trong chương trình Tin học lớp 3 của Bộ Giáo dục & Đào tạo nhằm đảm bảo nội dung trong yêu cầu của mục tiêu bài thi chứng chỉ quốc tế;', price: 75.000, discountprice: 63.750, image: 'https://cdn0.fahasa.com/media/catalog/product/9/7/9786043771749.jpg' },
+            { title: 'Sách - Kết Hôn Tuổi 25', description: 'Kết hôn tuổi 25 được tác giả Thu Thủy viết về chuyện tình yêu đầy bất ngờ của một cô gái “lo sợ mình sẽ ế đến già” với chàng bác sĩ sản khoa đẹp trai. Bắt đầu từ tình yêu “sét đánh” sau va chạm định mệnh trong bệnh viện, cho đến những lãng mạn, vui buồn, giận hờn, lo sợ ngốc nghếch để bước đến hôn nhân. Hôn nhân liệu có phải kết thúc của tình yêu như nhiều người vẫn nói? Hay hôn nhân là sự nối dài tình cảm lứa đôi, là trách nhiệm gìn giữ của mỗi người? Và liệu tuổi 25 có phải là quá sớm để kết hôn như nhiều người trẻ hiện nay quan niệm? Tất cả đã được tác giả Thu Thủy lý giải qua chuyện tình của Hùng và Nga trong Kết hôn tuổi 25.', price: 120.000, discountprice: 102.000, image: 'https://thuvienso.org/wp-content/uploads/2023/02/image_195509_1_27215.jpg' },
+            { title: 'Yêu Mình Đủ, Bạn Có Cả Thế Giới', description: 'Cuốn sách “Yêu mình đủ, bạn có cả thế giới” đã gỡ bỏ dần những nút thắt trong hành trình đi tìm hạnh phúc của mỗi người, để người đọc có thể tìm thấy niềm vui, sống hạnh phúc hơn. Từng câu chữ được xuất phát từ nỗi trăn trở và biến cố của chính tác giả. Với vai trò là một nhà đào tạo, cô không muốn thêm bất kì ai phải đợi đến khi mất mát, đau khổ mới thay đổi mà hãy vì tình yêu thương dành cho bản thân để thay đổi, để tốt hơn chính mình mỗi ngày. Cuốn sách tập trung vào việc làm sao để có cơ thể tràn đầy năng lượng, sức khoẻ, nội tâm bình an và mở trí với phương châm “thân khoẻ, tâm an, trí sáng”.', price: 75.000, discountprice: 63.750, image: 'https://cdn0.fahasa.com/media/catalog/product/9/7/9786043973211.jpg' },
+        ];
+        
+
+        const bookList = document.getElementById('bookList');
+
+        books.forEach(book => {
+            const bookElement = document.createElement('div');
+            bookElement.classList.add('book');
+            bookElement.innerHTML = `
+                <img src="${book.image}" alt="${book.title}">
+                <h2>${book.title}</h2>
+                <p>${book.description}</p>
+                <p>Giá Gốc: ${book.price.toFixed(2)}đ</p>
+                <div class="special-offer">Special Offer: Mua 1 Tặng 1 !</div>
+                <button class="add-to-cart" onclick="addToCart('${book.title} + ${book.title}', ${book.price})">Thêm vào Giỏ Hàng</button>
+                
+            `;
+            bookList.appendChild(bookElement);
+        });
+        
+
+        books2.forEach(book => {
+            const bookElement = document.createElement('div');
+            bookElement.classList.add('book');
+            bookElement.innerHTML = `
+                <img src="${book.image}" alt="${book.title}">
+                <h2>${book.title}</h2>
+                <p>${book.description}</p>
+                <p>Giá Gốc: ${book.price.toFixed(2)}đ</p>
+                <p>Giá Sale: ${book.discountprice.toFixed(2)}đ</p>
+                <div class="special-offer">Special Offer: Giảm Giá 30% !</div>
+                <button class="add-to-cart" onclick="addToCart('${book.title}', ${book.discountprice})">Thêm vào Giỏ Hàng</button>
+            `;
+            bookList.appendChild(bookElement);
+        });
+        books3.forEach(book => {
+            const bookElement = document.createElement('div');
+            bookElement.classList.add('book');
+            bookElement.innerHTML = `
+                <img src="${book.image}" alt="${book.title}">
+                <h2>${book.title}</h2>
+                <p>${book.description}</p>
+                <p>Giá Gốc: ${book.price.toFixed(2)}đ</p>
+                <p>Giá Sale: ${book.discountprice.toFixed(2)}đ</p>
+                <div class="special-offer">Special Offer: Giảm 15%!</div>
+                <button class="add-to-cart" onclick="addToCart('${book.title}', ${book.discountprice})">Thêm vào Giỏ Hàng</button>
+            `;
+            bookList.appendChild(bookElement);
+        });
+
+        function addToCart(itemName, itemPrice) {
+            cartItems.push({ name: itemName, price: itemPrice });
+            cartTotal += itemPrice;
+            updateCartTotal();
+        }
+
+        function updateCartTotal() {
+            document.querySelector('.cart').innerText = `Giỏ Hàng: ${cartTotal.toFixed(2)}đ`;
+        }
+
+        function openCart() {
+            if (cartItems.length > 0) {
+                alert('Danh Sách Đơn Hàng:\n' + cartItems.map(item => `${item.name} - ${item.price.toFixed(2)}đ`).join('\n') + `\nTổng Đơn Hàng: ${cartTotal.toFixed(2)}đ`);
+            } else {
+                alert('Giỏ Hàng Trống.');
+            }
+        }
+    </script>
+</body>
+</html>
